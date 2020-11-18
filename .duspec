@@ -1,0 +1,24 @@
+{
+  "id":"deltics.datetime",
+  "version":"",
+  "summary":"Date and time types and utilities",
+  "tags":[
+    "deltics",
+    "date",
+    "time",
+    "datetime"
+  ],
+  "copyright":"\u00A92019 Jolyon Direnko-Smith",
+  "language":"en",
+  "content":"source",
+  "dependencies":[
+    "deltics.inc:1.0.2",
+    "deltics.exceptions:1.0.0-beta.3"
+  ],
+  "source":{
+      "files":[
+        "src\\deltics.datetime.inc",
+        "src\\Deltics.DateUtils.pas"
+      ]
+    }
+}
