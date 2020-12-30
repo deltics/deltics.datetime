@@ -1,5 +1,5 @@
 
-  unit DateUtils.Tests;
+  unit Datetime.Tests;
 
 interface
 
@@ -8,7 +8,7 @@ interface
 
 
   type
-    DateUtilsTests = class(TTest)
+    DatetimeTests = class(TTest)
       procedure DayOfTheWeekIsCorrect;
       procedure DayOfTheMonthIsCorrect;
       procedure DayOfTheYearIsCorrect;
@@ -25,7 +25,7 @@ implementation
 
 { DateUtilsTests }
 
-  procedure DateUtilsTests.DayOfTheWeekIsCorrect;
+  procedure DatetimeTests.DayOfTheWeekIsCorrect;
   var
     dt: TDateTime;
   begin
@@ -42,7 +42,7 @@ implementation
   end;
 
 
-  procedure DateUtilsTests.DayOfTheMonthIsCorrect;
+  procedure DatetimeTests.DayOfTheMonthIsCorrect;
   var
     dt: TDateTime;
   begin
@@ -59,7 +59,7 @@ implementation
   end;
 
 
-  procedure DateUtilsTests.DayOfTheYearIsCorrect;
+  procedure DatetimeTests.DayOfTheYearIsCorrect;
   begin
     Test('DayOfTheYear(1 Jan 2019)').Assert(DayOfTheYear(EncodeDate(2019, 1, 1))).Equals(1);
     Test('DayOfTheYear(1 Mar 2019)').Assert(DayOfTheYear(EncodeDate(2019, 3, 1))).Equals(60);
@@ -71,7 +71,7 @@ implementation
   end;
 
 
-  procedure DateUtilsTests.DateDiffReturnsCorrectDays;
+  procedure DatetimeTests.DateDiffReturnsCorrectDays;
   begin
     Test('DateDiff(1 Jan 2020, 1 Jan 2020)').Assert(Date.Diff(EncodeDate(2020, 1, 1), EncodeDate(2020, 1, 1), dtDays)).Equals(0);
     Test('DateDiff(1 Jan 2020, 31 Dec 2019)').Assert(Date.Diff(EncodeDate(2020, 1, 1), EncodeDate(2019, 12, 31), dtDays)).Equals(-1);

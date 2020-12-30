@@ -12,13 +12,13 @@
   "language":"en",
   "content":"source",
   "dependencies":[
-    "deltics.inc:1.0.2",
-    "deltics.exceptions:1.0.0-beta.3"
+    "deltics.inc:1.1.0",
+    "deltics.exceptions:1.1.0"
   ],
   "source":{
       "files":[
         "src\\deltics.datetime.inc",
-        "src\\Deltics.DateUtils.pas"
+        "src\\Deltics.Datetime.pas"
       ]
     }
 }

@@ -38,12 +38,7 @@
 
 {$i deltics.datetime.inc}
 
-{$ifdef debug_DelticsDateUtils}
-  {$debuginfo ON}
-  {$undefine InlineMethods}
-{$endif}
-
-  unit Deltics.DateUtils;
+  unit Deltics.Datetime;
 
 
 interface
