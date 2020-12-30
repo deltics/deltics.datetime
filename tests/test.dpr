@@ -5,9 +5,9 @@
 
 uses
   Deltics.Smoketest,
-  Deltics.DateUtils in '..\src\Deltics.DateUtils.pas',
-  DateUtils.Tests in 'DateUtils.Tests.pas';
+  Deltics.Datetime in '..\src\Deltics.Datetime.pas',
+  Datetime.Tests in 'Datetime.Tests.pas';
 
 begin
-  TestRun.Test(DateUtilsTests);
+  TestRun.Test(DatetimeTests);
 end.

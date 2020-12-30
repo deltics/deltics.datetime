@@ -18,7 +18,7 @@
   "source":{
       "files":[
         "src\\deltics.datetime.inc",
-        "src\\Deltics.DateUtils.pas"
+        "src\\Deltics.Datetime.pas"
       ]
     }
 }
