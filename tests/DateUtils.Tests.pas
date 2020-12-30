@@ -12,6 +12,7 @@ interface
       procedure DayOfTheWeekIsCorrect;
       procedure DayOfTheMonthIsCorrect;
       procedure DayOfTheYearIsCorrect;
+      procedure DateDiffReturnsCorrectDays;
     end;
 
 
@@ -68,6 +69,17 @@ implementation
     Test('DayOfTheYear(1 Mar 2020)').Assert(DayOfTheYear(EncodeDate(2020, 3, 1))).Equals(61);
     Test('DayOfTheYear(31 Jan 2020)').Assert(DayOfTheYear(EncodeDate(2020, 12, 31))).Equals(366);
   end;
+
+
+  procedure DateUtilsTests.DateDiffReturnsCorrectDays;
+  begin
+    Test('DateDiff(1 Jan 2020, 1 Jan 2020)').Assert(Date.Diff(EncodeDate(2020, 1, 1), EncodeDate(2020, 1, 1), dtDays)).Equals(0);
+    Test('DateDiff(1 Jan 2020, 31 Dec 2019)').Assert(Date.Diff(EncodeDate(2020, 1, 1), EncodeDate(2019, 12, 31), dtDays)).Equals(-1);
+    Test('DateDiff(1 Jan 2020, 1 Jan 2020)').Assert(Date.Diff(EncodeDate(2019, 12, 31), EncodeDate(2020, 1, 1), dtDays)).Equals(1);
+    Test('DateDiff(1 Jan 2020, 5 Jan 2020)').Assert(Date.Diff(EncodeDate(2020, 1, 1), EncodeDate(2020, 1, 5), dtDays)).Equals(4);
+  end;
+
+
 
 
 
