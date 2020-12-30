@@ -104,7 +104,7 @@ interface
 
   type
     Date = class
-      function Diff(const aDateA, aDateB: TDateTime; aUnits: TDateTimeUnit = dtDay): Integer;
+      class function Diff(const aDateA, aDateB: TDateTime; aUnits: TDateTimeUnit = dtDay): Integer;
     end;
 
 
@@ -156,6 +156,7 @@ implementation
     DateUtils,
     Math,
     SysUtils,
+    TypInfo,
     Deltics.Exceptions;
 
 
@@ -476,7 +477,7 @@ implementation
 
 { Date }
 
-  function Date.Diff(const aDateA, aDateB: TDateTime; aUnits: TDateTimeUnit): Integer;
+  class function Date.Diff(const aDateA, aDateB: TDateTime; aUnits: TDateTimeUnit): Integer;
   var
     diff: Double;
   begin
@@ -494,6 +495,9 @@ implementation
       dtMinutes     : result := Trunc(diff * 24 * 60);
       dtSeconds     : result := Trunc(diff * 24 * 60 * 60);
       dtMilliseconds: result := Trunc(diff * 24 * 60 * 60 * 1000);
+    else
+      raise ENotImplemented.CreateFmt('%s units are not supported by DateDiff',
+                                      [GetEnumName(TypeInfo(TDateTimeUnit), Ord(aUnits))]);
     end;
   end;
 
